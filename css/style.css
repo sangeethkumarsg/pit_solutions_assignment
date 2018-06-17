@@ -1,0 +1,43 @@
+.customer-data-form{
+    border: 3px solid black; 
+    padding: 2%;
+}
+#customerFormContainer{
+    padding-top: 10%;
+}
+.required-field{
+    color:red;
+}
+#add-item-btn{
+    float :right;
+    margin-right: 1%;
+}
+.product-summary{
+    float :right;
+    margin-right: 2%;
+}
+.summary-item{
+    float: right;
+    padding-top: 2%;
+}
+.col-sm-6.col-md-6.col-lg-6.value-box{
+    width: 48%;
+}
+.container.invoice-container{
+    border: 1px solid black; 
+    padding: 2%;
+    margin: 2%;
+}
+
+#bill-info-header{
+    float:left;
+}
+#customer-info{
+    float:right;
+}
+#product-table td, #product-table th{
+    padding: 2%;
+}
+#product-table table{
+    border-collapse: collapse;
+}

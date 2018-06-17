@@ -1,0 +1,76 @@
+<div class="container invoice-container">
+    <div id="bill-info-header">
+        <label>Bill Number</label> {{billNumber}}
+    </div>
+    <br>
+
+    <div id="customer-info">
+        <label>Customer Name : </label><b> {{customerInfo.name}}</b><br>
+        <label>Customer Email : </label> <b>{{customerInfo.email}}</b><br>
+    </div>
+    <br><br><br>
+    <center>
+    <div id="company-info"><b>{{companyName}}</b></div>
+    <br>
+    <div id="product-table table-responsive">
+        <table class="table-bordered">
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Amount</th>
+                <th>Tax</th>
+                <th>Total</th>
+            </tr>
+            <tr ng-repeat="product in productInfo.items">
+                <td>{{product.productName}}</td>
+                <td>{{product.quantity}}</td>
+                <td>{{product.amount}}</td>
+                <td>{{product.tax}}&nbsp;%</td>
+                <td>{{product.total}}</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>Sub total</td>
+                <td>{{productInfo.subtotal}}</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>Less Discount</td>
+                <td>{{productInfo.discountAmount}}</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Total</td>
+                <td>{{productInfo.grandTotal}}</td>
+            </tr>
+        </table>
+    
+    </div>
+</center>
+    <br><br>
+    <div id="footer">
+        Date : {{currentDate}}<br>
+        Place : {{location}}
+    </div>
+
+</div>

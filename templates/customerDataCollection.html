@@ -1,0 +1,32 @@
+<div class="container" id="customerFormContainer">
+<div class="panel panel-primary">
+    <div class="panel-body">
+    
+        <form name="customerDataForm" class="customer-data-form">
+            <div class="control-group" ng-class="{error: customerDataForm.name.$invalid && !customerDataForm.name.$pristine}">
+                <label class="col-sm-2 col-md-2 col-lg-2">Customer Name</label>
+                <input class="col-sm-6 col-md-6 col-lg-6" type="text" name="name" ng-model="appData.customerData.name" required >
+                <span ng-show="customerDataForm.name.$error.required && !customerDataForm.name.$pristine" class="help-inline required-field">
+                    Required</span>
+            </div>
+            
+            <div class="control-group" ng-class="{error: customerDataForm.email.$invalid && !customerDataForm.email.$pristine}">
+                <label class="col-sm-2 col-md-2 col-lg-2">Email address</label>
+                <input class="col-sm-6 col-md-6 col-lg-6" type="email" name="email" ng-model="appData.customerData.email" required>
+                <span ng-show="customerDataForm.email.$error.required && !customerDataForm.email.$pristine" class="help-inline required-field">
+                    Required</span>
+                <span ng-show="customerDataForm.email.$error.email" class="help-inline required-field">
+                    Invalid email</span>
+            </div>
+            
+        <center>
+            <br>
+            <button ng-click="submitCustomerData()" ng-disabled="customerDataForm.$invalid"
+                    class="btn btn-md btn-primary">Submit</button>
+                </center>
+        
+        </form>
+   
+</div>
+</div>
+</div>

@@ -1,0 +1,38 @@
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Amount</th>
+            <th>Tax (%)</th>
+            <th>Total</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="product in appData.productInfo.items">
+            <td><input type="text" placeholder="Enter product" ng-model="product.productName"></td>
+            <td><input type="number" placeholder="Enter quantity"  ng-model="product.quantity" step="any"></td>
+            <td><input type="number"  placeholder="Enter amount" ng-model="product.amount" step="any"></td>
+            <td><input type="number"  placeholder="Enter tax" ng-model="product.tax" step="any"></td>
+            <td><label>{{getProductTotal($index)}}</label></td>
+            <td><button class="btn btn-danger" ng-click="removeItem($index)">-</button></td>
+        </tr>
+    </table>
+    <div class="product-summary">
+        <button class="btn btn-success" id="add-item-btn" ng-click="addNewItem()">+</button><br/>
+        <div class="summary-item">
+            <label class="col-sm-6 col-md-6 col-lg-6 " >Discount </label>
+            <input class="col-sm-6 col-md-6 col-lg-6 value-box" type="text" ng-model="appData.productInfo.discount">
+            <br/>
+        </div>
+        
+        <div class="summary-item1">
+            <label class="col-sm-6 col-md-6 col-lg-6" >Grand Total </label>
+            <label class="col-sm-6 col-md-6 col-lg-6 value-box">{{getGrandTotal()}}</label>
+            <br/>
+        </div>
+        
+        <div class="summary-item">
+            <button class="btn btn-md btn-info" ng-click="print()">Print</button><br/>
+        </div>
+</div>
+</div>
